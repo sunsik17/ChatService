@@ -116,13 +116,14 @@ cd ChatService
     │◄── MESSAGE /sub/chatrooms/room-1 ─ │  (같은 방 구독자 전원 수신)
 ```
 
-### 핵심 컴포넌트 설명
+### 컴포넌트
 
 **WebSocketConfiguration**
 
 WebSocket 서버의 기본 설정을 담당합니다.
 
-- `/ws` 엔드포인트로 WebSocket 및 SockJS 연결을 모두 허용합니다. SockJS는 WebSocket을 지원하지 않는 환경에서 자동으로 HTTP 롱폴링 등의 방식으로 폴백합니다.
+- `/ws` 엔드포인트로 WebSocket을 허용합니다.
+  - withSockJS를 추가해 WebSocket을 지원하지 않는 환경에서 자동으로 HTTP 롱폴링 등의 방식으로 폴백할 수 있습니다.
 - `/pub`을 애플리케이션 목적지 prefix로 설정합니다. 클라이언트가 `/pub/**` 경로로 메시지를 보내면 Spring이 해당 `@MessageMapping` 메서드로 라우팅합니다.
 - `/sub`을 메시지 브로커 prefix로 설정합니다. 클라이언트는 `/sub/**` 경로를 구독하여 메시지를 수신합니다.
 
