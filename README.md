@@ -101,9 +101,9 @@ cd ChatService
 ```
 클라이언트                        서버 (Spring Boot)
     │                                    │
-    │── WebSocket 연결 (/ws) ──────────► │
+    │── WebSocket 연결 (/ws) ──────────►  │
     │                                    │
-    │── STOMP CONNECT ────────────────► │
+    │── STOMP CONNECT ────────────────►  │
     │◄─ STOMP CONNECTED ──────────────── │
     │                                    │
     │── SUBSCRIBE /sub/chatrooms/room-1 ►│  (채팅방 구독)
