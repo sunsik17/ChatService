@@ -106,13 +106,13 @@ cd ChatService
     │── STOMP CONNECT ────────────────►  │
     │◄─ STOMP CONNECTED ──────────────── │
     │                                    │
-    │── SUBSCRIBE /sub/chatrooms/room-1 ►│  (채팅방 구독)
+    │── SUBSCRIBE /sub/chatrooms/{Id} ►  │  (채팅방 구독)
     │                                    │
-    │── SEND /pub/chatrooms ──────────► │  (메시지 전송)
-    │                        ┌──────────┘
+    │── SEND /pub/chatrooms ──────────►  │  (메시지 전송)
+    │                        ┌───────────┘
     │                        │ ChatController가 수신
     │                        │ /sub/chatrooms/room-1 으로 브로드캐스트
-    │                        └──────────┐
+    │                        └───────────┐
     │◄── MESSAGE /sub/chatrooms/room-1 ─ │  (같은 방 구독자 전원 수신)
 ```
 
