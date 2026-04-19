@@ -1,4 +1,4 @@
-package com.example.chatservice.message.presentation.chatmessage.dtos.request;
+package com.example.chatservice.message.presentation.chat.dtos.request;
 
 public record Message(
 	String sender,
